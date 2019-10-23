@@ -3,7 +3,7 @@
 
 ///IVAN NOTES:
 //1. Ad-hoc polymorphism (AKA ???), has the language feature is Overloading
-//2.1 Subtype polymorphism (AKA Runtime polymorphism), has the language features of Sub-Classes and Virtual functions (override).
+//2.1 Subtype polymorphism (AKA 'Polymorphism' or Runtime polymorphism), has the language features of Sub-Classes and Virtual functions (override).
 //2.2 Pointers are used for subclasses, because when called, we want to point to the subclass of animal, instead of expecting 'Animal' only.
 //2.3 Virtual Overrides take place withing CHILDREN of a class (or SubClasses). Virtual Overrides should be established within the declaration of a child class.
 
@@ -12,6 +12,14 @@
 //NOTE: (Animal* lalalal) = create pointer. Thus, function(Animal* lalalal){return;} = create temp pointer and return.
 //NOTE: (Animal& lalalal) = create reference. Thus, function(Animal& lalalal){return;} = create temp reference and return.
 
+
+/*
+Recipe to Override a Virtual Method:
+1. Find the signature in the API reference. (Look up the chain of inherited items, and find the original "BeginPlay()" for example. Make sure it's preffixed with virtual).
+2. Copy and use the same signature, and add override; to the end.
+3. Define it in the .cpp without Virtual or Override
+4. Usually call "Super::<funcname> in the first line of code. Example: "Super::BeginPlay();"
+*/
 
 #include <iostream>
 
